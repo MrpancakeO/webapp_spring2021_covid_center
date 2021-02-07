@@ -5,13 +5,21 @@
         COVID Screening
     </title>
 </head>
+<style>
+    h1 {
+        text-align: center;
+    }
+    body {
+        text-align: center;
+    }
+</style>
+
 
 <body>
-    <h1> First heading</h1>
-    <p>Hello world</p>
-    <p>Hello World pt2</p>
+    <h1> Covid Screening</h1>
+    <hr />
 
-
+    <h2>Patient Information</h2>
     <form action="/action_page.php">
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="fname"><br><br>
@@ -19,8 +27,76 @@
         <input type="text" id="lname" name="lname"><br><br>
         <label for="lname">Sex:</label>
         <input type="text" id="lsex" name="lsex"><br><br>
+        <label for="lname">Phone Number:</label>
+        <input type="text" id="lnum" name="lnum"><br><br>
+        <label for="lname">Email:</label>
+        <input type="text" id="lemail" name="lemail"><br><br>
+        <label for="lname">Address:</label>
+        <input type="text" id="laddy" name="laddy"><br><br>
+        <label for="lname">Date of Birth:</label>
+        <input type="text" id="lDob" name="lDob"><br><br>
 
-        <input type="submit" value="Submit">
+        <h2>Possible Symptoms</h2>
+        <p>Select all the symptoms that you may have in the past 24 hours:</p>
+        <input type="checkbox" id="sympton1" name="sympton1" value="fever">
+        <label for="sympton1">Fever/Chills</label><br>
+        <input type="checkbox" id="sympton2" name="sympton2" value="cough">
+        <label for="sympton2">Coughs</label><br>
+        <input type="checkbox" id="sympton3" name="sympton3" value="breath">
+        <label for="sympton3">Shortness of Breath</label><br>
+        <input type="checkbox" id="sympton4" name="sympton4" value="fatigue">
+        <label for="sympton4">Fatigue</label><br>
+        <input type="checkbox" id="sympton5" name="sympton5" value="bodyAches">
+        <label for="sympton5">Muscle/Body Aches</label><br>
+        <input type="checkbox" id="sympton6" name="sympton6" value="headache">
+        <label for="sympton6">Headaches</label><br>
+        <input type="checkbox" id="sympton7" name="sympton7" value="noTaste">
+        <label for="sympton7">Loss of taste of smell</label><br>
+        <input type="checkbox" id="sympton8" name="sympton8" value="throat">
+        <label for="sympton8">Sore Throat</label><br>
+        <input type="checkbox" id="sympton9" name="sympton9" value="congestion">
+        <label for="sympton8">Congestion/Runny Nose</label><br>
+        <input type="checkbox" id="sympton10" name="sympton10" value="nausea">
+        <label for="sympton10">Nausea/Vomitting</label><br>
+        <input type="checkbox" id="sympton11" name="sympton11" value="diarrhea">
+        <label for="sympton11">Diarrhea</label><br>
+
+
+
+        <br />
+
+        <h2>Other Questions</h2>
+        <p>Have you had contact (within 6 feet for > 15 minutes), or caring for someone who is diagnosed with COVID-19 in the last 14 days and were not wearing proper personal protective equipment?</p>
+        <input type="radio" id="rbYes1" name="rbYes1" value="yes1">
+        <label for="yes1">Yes</label>
+        <input type="radio" id="rbNo1" name="rbNo1" value="no1">
+        <label for="no1">No</label><br />
+
+        <p>Have you had a diagnosis of COVID-19 in the last 10 days?</p>
+        <input type="radio" id="rbYes2" name="rbYes2" value="yes2">
+        <label for="yes2">Yes</label>
+        <input type="radio" id="rbNo2" name="rbNo2" value="no2">
+        <label for="no2">No</label><br />
+
+        <p>Have you travelled to any country in the last 14 days?</p>
+        <input type="radio" id="rbYes3" name="rbYes3" value="yes3">
+        <label for="yes1">Yes</label>
+        <input type="radio" id="rbNo3" name="rbNo3" value="no3">
+        <label for="no3">No</label><br />
+        <label for="ifYes">If yes, what countries</label>
+        <input type="text" id="ifYes" name="ifYes"><br><br>
+
+        <p>Have you socialized with a group of 6 or more people in the last 14 days?</p>
+        <input type="radio" id="rbYes4" name="rbYes4" value="yes4">
+        <label for="yes4">Yes</label>
+        <input type="radio" id="rbNo4" name="rbNo4" value="no4">
+        <label for="no4">No</label><br /><br />
+
+        <label for="ltemp">Current Temperature:</label><br />
+        <input type="text" id="lDob" name="lDob"><br><br>
+
+        <br /><input type="submit" value="Submit">
+
     </form>
 </body>
 
