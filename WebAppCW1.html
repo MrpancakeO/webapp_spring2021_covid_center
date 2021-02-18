@@ -75,66 +75,147 @@
                         </div>
                     </fieldset>
 
-                    <p>
-                        <label for="lname">Phone Number:</label>
-                        <input type="text" id="lnum" name="lnum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                    </p>
+                    <div class="row">
+                        <label for="lnum" class="col-sm-2 col-form-label">
+                        <span>Phone Number:</span>
+                        </label>
 
-                    <p>
-                        <label for="lname">
+                        <div class="col-sm-10">
+                            <input type="text" id="lnum" name="lnum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="(000)-000-0000">
+                        </div>
+                        
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="lEmail" class="col-sm-2 col-form-label">
                             Email:
                             <strong><abbr title="required">*</abbr></strong>
                         </label>
-                        <input type="text" id="lemail" name="lemail" required>
-                    </p>
+                        <div class="col-sm-10">
+                            <input type="text" id="txtemail" name="txtemail" required class="form-control" placeholder="name@example.com">
+                        </div>
+                        
+                    </div>
 
-                    <p>
-                        <label for="lname">Address:</label>
-                        <input type="text" id="laddy" name="laddy">
-                    </p>
+                    <div class="row form-group">
+                        <label for="txtAddress" class="col-sm-2 col-form-label">Address:</label>
+                        <div class="col-md-12 col-lg-6">
+                            <input type="text" id="laddy" name="laddy" class="form-control" placeholder="Street">
+                        </div>
 
-                    <p>
-                        <label for="lname">
+                        <div class="col>
+                            <input type="text" id="lCity" name="City" class="form-control" placeholder="City">
+                        </div>
+
+                        <div class="col">
+                            <input type="text" id="lState" name="lState" class="form-control" placeholder="State">
+                        </div>
+
+                        <div class="col">
+                            <input type="text" id="lZip" name="lZip" class="form-control" placeholder="Zip Code" pattern="[0-9[{5}">
+                        </div>
+
+
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="lDob" class="col-sm-2 col-form-label">
                             <span>
                                 Date of Birth:
                             </span>
 
                         </label>
-                        <input type="date" id="lDob" name="lDob" required>
-                    </p>
+
+                        <div class="col-sm-10">
+                            <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
+                        </div>
+                        
+                    </div>
 
                 </fieldset>
 
                 <fieldset>
                     <legend>Part 2: Potential Symptoms</legend>
-                    <h3>Select all the symptoms that you may have in the past 24 hours:</h3>
-                    <input type="checkbox" id="sympton1" name="symptons" value="fever">
-                    <label for="sympton1">Fever/Chills</label><br>
-                    <input type="checkbox" id="sympton2" name="symptons" value="cough">
-                    <label for="sympton2">Coughs</label><br>
-                    <input type="checkbox" id="sympton3" name="symptons" value="breath">
-                    <label for="sympton3">Shortness of Breath</label><br>
-                    <input type="checkbox" id="sympton4" name="symptons" value="fatigue">
-                    <label for="sympton4">Fatigue</label><br>
-                    <input type="checkbox" id="sympton5" name="symptons" value="bodyAches">
-                    <label for="sympton5">Muscle/Body Aches</label><br>
-                    <input type="checkbox" id="sympton6" name="symptons" value="headache">
-                    <label for="sympton6">Headaches</label><br>
-                    <input type="checkbox" id="sympton7" name="symptons" value="noTaste">
-                    <label for="sympton7">Loss of taste of smell</label><br>
-                    <input type="checkbox" id="sympton8" name="symptons" value="throat">
-                    <label for="sympton8">Sore Throat</label><br>
-                    <input type="checkbox" id="sympton9" name="symptons" value="congestion">
-                    <label for="sympton8">Congestion/Runny Nose</label><br>
-                    <input type="checkbox" id="sympton10" name="symptons" value="nausea">
-                    <label for="sympton10">Nausea/Vomitting</label><br>
-                    <input type="checkbox" id="sympton11" name="symptons" value="diarrhea">
-                    <label for="sympton11">Diarrhea</label><br>
-                </fieldset>
+                    <div class="alert alert-primary">
+                        <h9>Select all the symptoms that you may have in the past 24 hours:</h9>
+                    </div>
+                    
+
+
+
+                    <div class="row form-group">
+
+                        <h4 class="col-sm-2 col-form-label"> Symptoms:</h4>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom1" name="symptoms" value="fever" class="form-check-input">
+                                <label for="symptom1" class="form-check-label">Fever/Chills</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom2" name="symptoms" value="cough" class="form-check-input">
+                                <label for="symptom2" class="form-check-label">Coughs</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom3" name="symptoms" value="breath" class="form-check-input">
+                                <label for="symptom3" class="form-check-label">Shortness of Breath</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom4" name="symptoms" value="fatigue" class="form-check-input">
+                                <label for="symptom4" class="form-check-label">Fatigue</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom5" name="symptoms" value="bodyAches" class="form-check-input">
+                                <label for="symptom5" class="form-check-label">Muscle/Body Aches</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom6" name="symptoms" value="headache" class="form-check-input">
+                                <label for="symptom6" class="form-check-label">Headaches</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom7" name="symptoms" value="noTaste" class="form-check-input">
+                                <label for="symptom7" class="form-check-label">Loss of taste of smell</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom8" name="symptoms" value="throat" class="form-check-input">
+                                <label for="symptom8" class="form-check-label">Sore Throat</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom9" name="symptoms" value="congestion" class="form-check-input">
+                                <label for="symptom9" class="form-check-label">Congestion/Runny Nose</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom10" name="symptoms" value="nausea" class="form-check-input">
+                                <label for="symptom10" class="form-check-label">Nausea/Vomitting</label><br>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" id="symptom11" name="symptoms" value="diarrhea" class="form-check-input">
+                                <label for="symptom11" class="form-check-label">Diarrhea</label><br>
+                            </div>
+                        </div>
+
+                       
+                         
+                           
+                        </div>
+
+                 </fieldset>
 
                 <fieldset>
-                    <legend>Part 3: Other Questions</legend>
+                    <legend class="w-auto">Part 3: Other Questions</legend>
+                    
+                    
                     <p>Have you had contact (within 6 feet for > 15 minutes), or caring for someone who is diagnosed with COVID-19 in the last 14 days and were not wearing proper personal protective equipment?</p>
+                    
                     <input type="radio" id="rbYes1" name="rbYes1" value="yes1">
                     <label for="yes1">Yes</label>
                     <input type="radio" id="rbNo1" name="rbNo1" value="no1">
@@ -205,8 +286,8 @@
 
 
 
-                <button type="submit">Submit</button>
-                <button type="reset">Reset</button>
+                <buttom type="submit" class="btn btn-primary">Submit</buttom>
+                <buttom type="reset" class="btn btn-secondary">Reset</buttom>
 
             </form>
 
