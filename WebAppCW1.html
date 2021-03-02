@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>
         COVID Screening
@@ -11,18 +12,21 @@
 <body>
     <header>
         <h1> Covid Screening</h1>
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="js/script.js"></script>
     </header>
 
     <section>
         <article>
 
-            <form>
+            <form onsubmit="return validateForm()" id="mainForm" novalidate>
                 <fieldset class="border">
                     <legend class="w-auto"> Part 1: Patient Information</legend>
-                    
+
                     <div class="form-group row">
                         <div class="col-sm-2">
                             <label for="fname" class="col-form-label">
@@ -31,9 +35,10 @@
                             </label>
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" id="fname" name="fname" required class="form-control" placeholder="First Name" required>
+                            <input type="text" id="fname" name="fname" required class="form-control"
+                                placeholder="First Name" required>
                         </div>
-                        
+
                     </div>
 
                     <div class="form-group row">
@@ -44,7 +49,8 @@
                             </label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" id="lname" name="lname" required class="form-control" placeholder="Last Name" required>
+                            <input type="text" id="lname" name="lname" required class="form-control"
+                                placeholder="Last Name" required>
                         </div>
                     </div>
 
@@ -60,30 +66,33 @@
 
 
                                 <div class="form-check">
-                                    <input type="radio" id="rbfemale" name="gender" value="female" class="form-check-input">
+                                    <input type="radio" id="rbfemale" name="gender" value="female"
+                                        class="form-check-input">
                                     <label for="female" class="form-check-label">Female</label><br>
                                 </div>
 
 
                                 <div class="form-check">
-                                    <input type="radio" id="rbother" name="gender" value="other" class="form-check-input">
+                                    <input type="radio" id="rbother" name="gender" value="other"
+                                        class="form-check-input">
                                     <label for="other" class="form-check-label">Other</label>
                                 </div>
 
                             </div>
-                           
+
                         </div>
                     </fieldset>
 
                     <div class="row">
                         <label for="lnum" class="col-sm-2 col-form-label">
-                        <span>Phone Number:</span>
+                            <span>Phone Number:</span>
                         </label>
 
                         <div class="col-sm-10">
-                            <input type="text" id="lnum" name="lnum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="(000)-000-0000">
+                            <input type="text" id="lnum" name="lnum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                class="form-control" placeholder="(000)-000-0000">
                         </div>
-                        
+
                     </div>
 
                     <div class="row form-group">
@@ -92,9 +101,10 @@
                             <strong><abbr title="required">*</abbr></strong>
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" id="txtemail" name="txtemail" required class="form-control" placeholder="name@example.com">
+                            <input type="text" id="txtemail" name="txtemail" required class="form-control"
+                                placeholder="name@example.com">
                         </div>
-                        
+
                     </div>
 
                     <div class="row form-group">
@@ -103,7 +113,7 @@
                             <input type="text" id="laddy" name="laddy" class="form-control" placeholder="Street">
                         </div>
 
-                        <div class="col>
+                        <div class="col">
                             <input type="text" id="lCity" name="City" class="form-control" placeholder="City">
                         </div>
 
@@ -112,7 +122,8 @@
                         </div>
 
                         <div class="col">
-                            <input type="text" id="lZip" name="lZip" class="form-control" placeholder="Zip Code" pattern="[0-9[{5}">
+                            <input type="text" id="lZip" name="lZip" class="form-control" placeholder="Zip Code"
+                                pattern="[0-9[{5}">
                         </div>
 
 
@@ -127,9 +138,14 @@
                         </label>
 
                         <div class="col-sm-10">
-                            <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
+                            <input type="date" id="txtDob" name="txtDob" required class="form-control"
+                                placeholder="Date of Birth">
+                                <div id="DobError" class=" col-sm-5 invisible errorMessage">
+
+                                </div>
                         </div>
                         
+
                     </div>
 
                 </fieldset>
@@ -139,7 +155,7 @@
                     <div class="alert alert-primary">
                         <h9>Select all the symptoms that you may have in the past 24 hours:</h9>
                     </div>
-                    
+
 
 
 
@@ -148,73 +164,86 @@
                         <h4 class="col-sm-2 col-form-label"> Symptoms:</h4>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input type="checkbox" id="symptom1" name="symptoms" value="fever" class="form-check-input">
+                                <input type="checkbox" id="symptom1" name="symptoms" value="fever"
+                                    class="form-check-input">
                                 <label for="symptom1" class="form-check-label">Fever/Chills</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom2" name="symptoms" value="cough" class="form-check-input">
+                                <input type="checkbox" id="symptom2" name="symptoms" value="cough"
+                                    class="form-check-input">
                                 <label for="symptom2" class="form-check-label">Coughs</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom3" name="symptoms" value="breath" class="form-check-input">
+                                <input type="checkbox" id="symptom3" name="symptoms" value="breath"
+                                    class="form-check-input">
                                 <label for="symptom3" class="form-check-label">Shortness of Breath</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom4" name="symptoms" value="fatigue" class="form-check-input">
+                                <input type="checkbox" id="symptom4" name="symptoms" value="fatigue"
+                                    class="form-check-input">
                                 <label for="symptom4" class="form-check-label">Fatigue</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom5" name="symptoms" value="bodyAches" class="form-check-input">
+                                <input type="checkbox" id="symptom5" name="symptoms" value="bodyAches"
+                                    class="form-check-input">
                                 <label for="symptom5" class="form-check-label">Muscle/Body Aches</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom6" name="symptoms" value="headache" class="form-check-input">
+                                <input type="checkbox" id="symptom6" name="symptoms" value="headache"
+                                    class="form-check-input">
                                 <label for="symptom6" class="form-check-label">Headaches</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom7" name="symptoms" value="noTaste" class="form-check-input">
+                                <input type="checkbox" id="symptom7" name="symptoms" value="noTaste"
+                                    class="form-check-input">
                                 <label for="symptom7" class="form-check-label">Loss of taste of smell</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom8" name="symptoms" value="throat" class="form-check-input">
+                                <input type="checkbox" id="symptom8" name="symptoms" value="throat"
+                                    class="form-check-input">
                                 <label for="symptom8" class="form-check-label">Sore Throat</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom9" name="symptoms" value="congestion" class="form-check-input">
+                                <input type="checkbox" id="symptom9" name="symptoms" value="congestion"
+                                    class="form-check-input">
                                 <label for="symptom9" class="form-check-label">Congestion/Runny Nose</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom10" name="symptoms" value="nausea" class="form-check-input">
+                                <input type="checkbox" id="symptom10" name="symptoms" value="nausea"
+                                    class="form-check-input">
                                 <label for="symptom10" class="form-check-label">Nausea/Vomitting</label><br>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="symptom11" name="symptoms" value="diarrhea" class="form-check-input">
+                                <input type="checkbox" id="symptom11" name="symptoms" value="diarrhea"
+                                    class="form-check-input">
                                 <label for="symptom11" class="form-check-label">Diarrhea</label><br>
                             </div>
                         </div>
 
-                       
-                         
-                           
-                        </div>
 
-                 </fieldset>
+
+
+                    </div>
+
+                </fieldset>
 
                 <fieldset>
                     <legend class="w-auto">Part 3: Other Questions</legend>
 
                     <div class="row">
-                        <p class="col-sm-2 col-form-label">Have you had contact (within 6 feet for > 15 minutes), or caring for someone who is diagnosed with COVID-19 in the last 14 days and were not wearing proper personal protective equipment?</p>
+                        <p class="col-sm-2 col-form-label">Have you had contact (within 6 feet for > 15 minutes), or
+                            caring for someone who is diagnosed with COVID-19 in the last 14 days and were not wearing
+                            proper personal protective equipment?</p>
                         <div class="col-sm-10">
                             <div class="for-check">
                                 <input type="radio" id="rbYes1" name="rb2" value="yes1" class="form-check-input">
@@ -268,36 +297,44 @@
                                 </label>
 
                                 <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <input type="radio" id="rbYes3" name="rb4" value="yes3" class="form-check-input">
-                                        <label for="yes1" class="form-check-label">Yes</label>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="radio" id="rbNo3" name="rb4" value="no3" class="form-check-input">
-                                        <label for="no3" class="form-check-label">No</label><br />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div>
-                                            <label for="txtCountry" class="form-check-label">
-                                                If yes, what countries (separate with commas)
-                                            </label>
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <input type="text" id="txtCountry" name="txtCountry" required class="form-control" placeholder="USA">
+                                    <div>
+                                        <div class="form-group" onchange="updateCountryView()">
+                                            <input type="radio" id="rbYes3" name="rb4" value="yes3"
+                                                class="form-check-input">
+                                            <label for="yes1" class="form-check-label">Yes</label>
                                         </div>
 
+                                        <div class="form-group" onchange="updateCountryView()">
+                                            <input type="radio" id="rbNo3" name="rb4" value="no3"
+                                                class="form-check-input">
+                                            <label for="no3" class="form-check-label">No</label><br />
+                                        </div>
+
+                                        <div id="divCountry" class="form-group invisible">
+                                            <div>
+                                                <label for="lCountry" class="form-check-label">
+                                                    If yes, what countries (separate with commas)
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <input type="text" id="txtCountry" name="txtCountry" required
+                                                    class="form-control" placeholder="">
+                                                    <div id="countryErrorMessage" class=" col-sm-5 invisible errorMessage">
+                                                        Countries must be listed
+                                                    </div>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
+
+
+
+
+
 
                                 </div>
-
-
-
-
-
-
-                            </div>
 
 
 
@@ -306,7 +343,8 @@
 
                     <fieldset class="border form-group">
                         <div class="row">
-                            <p class="col-sm-2 col-form-label">Have you socialized with a group of 6 or more people in the last 14 days?</p>
+                            <p class="col-sm-2 col-form-label">Have you socialized with a group of 6 or more people in
+                                the last 14 days?</p>
 
                             <div class="col-sm-10">
                                 <div class="form-group">
@@ -324,7 +362,7 @@
 
                         </div>
                     </fieldset>
-                    
+
 
 
                     <div class="form-group row">
@@ -351,10 +389,10 @@
 
 
 
-                    <buttom type="submit" class="btn btn-primary">Submit</buttom>
-                    <buttom type="reset" class="btn btn-secondary">Reset</buttom>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
 
-</form>
+            </form>
 
 
 
@@ -364,7 +402,7 @@
         </footer>
     </section>
 
- 
+
 </body>
 
-        </html >
+</html>
